@@ -3,7 +3,7 @@ def powerSum(num,X,N):
   if ((num,X) not in dictBottomUp.keys()):
     if (num**N < X):
       dictBottomUp[(num,X)] = powerSum(num+1,X,N) + powerSum(num+1,X-num**N,N)
-      return powerSum(num+1,X,N) + powerSum(num+1,X-num**N,N)
+      return dictBottomUp[(num,X)]
     elif(num**N == X):
       dictBottomUp[(num,X)] = 1
       return 1
